@@ -1,0 +1,25 @@
+version: "3"
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: kabs_password
+      MYSQL_DATABASE: kabs_db
+      MYSQL_USER: kabs_user
+      MYSQL_PASSWORD: kabs_password
+
+  db_test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: test_password
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: test_user
+      MYSQL_PASSWORD: test_password

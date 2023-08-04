@@ -1,0 +1,14 @@
+# Use an official MySQL image as the base image
+FROM mysql:latest
+
+# Environment variables for testing
+ENV MYSQL_ROOT_PASSWORD=test_password
+ENV MYSQL_DATABASE=test_db
+ENV MYSQL_USER=test_user
+ENV MYSQL_PASSWORD=test_password
+
+# Copy SQL initialization scripts for testing
+COPY test.database.sql /docker-entrypoint-initdb.d/
+
+# Expose the MySQL port
+EXPOSE 3306
