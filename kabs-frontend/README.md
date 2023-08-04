@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# Task Manager Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the frontend representation of the Task Manager System. The Task Manager is a project management tool that allows users to efficiently manage their tasks, track progress, and collaborate with team members. The frontend provides an intuitive and user-friendly interface for interacting with the Task Manager system.
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+The frontend is built using the following technologies:
 
-### `npm start`
+- React: A popular JavaScript library for building dynamic user interfaces.
+- TypeScript: A typed superset of JavaScript that enables static type-checking and improves code maintainability.
+- Jest: A testing framework for JavaScript and TypeScript applications, used for writing unit and integration tests.
+- Material-UI: A UI component library for React that provides pre-designed components for creating attractive and responsive user interfaces.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Layout
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The frontend is designed with a clean and modern layout, consisting of three main pages:
 
-### `npm test`
+1. **Login**: The login page allows users to authenticate themselves by providing their credentials. Upon successful login, users gain access to the dashboard.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Create User**: This page enables new users to register and create an account to use the Task Manager system.
 
-### `npm run build`
+3. **Dashboard**: The dashboard is designed to resemble a simplified Kanban board, similar to Jira's board. Tasks are displayed under various status columns, including ToDo, InProgress, Blocked, InQA, Done, and Deployed. Users can easily drag and drop tasks between these columns to update their status, providing a seamless workflow experience. The dashboard layout is responsive and supports both desktop and small screens.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Each task on the dashboard is represented by a card containing three icons:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **History**: Clicking on this icon allows users to view the task history in a list, ordered by the time of updates. Users can easily track the changes made to the task over time.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Assign Users**: This icon provides the functionality to assign the task to other team members, promoting collaboration and efficient task allocation.
 
-### `npm run eject`
+- **Edit Task**: By clicking on this icon, users can easily edit the task's title and description, facilitating quick updates to task details.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## How to Start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To run the Task Manager frontend on your local machine, follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Screenshots
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- Add some screenshots of the app here to showcase its appearance -->
