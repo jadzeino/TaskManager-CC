@@ -52,3 +52,17 @@ With the Task Manager system up and running, you can now explore its various fea
 Please note that the current implementation of the Task Manager project is focused on core functionality and smooth user interactions. As a result, some test cases may not be fully covered. Additionally, certain features, such as pagination and lazy loading, have not been implemented yet, but can be added in future iterations. We welcome any feedback, suggestions, or contributions to improve the Task Manager system and make it even more powerful and efficient.
 
 Happy task managing!
+
+![Sign In](./public/Screenshot 2023-08-04 at 14.51.23.png)
+
+![Create User In](./public/Screenshot 2023-08-04 at 14.51.36.png)
+
+![Dashboard](./public/Screenshot 2023-08-04 at 14.58.27.png)
+
+![Edit Task](./public/Screenshot 2023-08-04 at 14.59.36.png)
+
+![Assign Task](./public/Screenshot 2023-08-04 at 15.02.55.png)
+
+![Task History](./public/Screenshot 2023-08-04 at 15.03.26.png)
+
+![Task Status](./public/Screenshot 2023-08-04 at 15.04.23.png)

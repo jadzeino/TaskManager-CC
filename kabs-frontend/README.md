@@ -37,7 +37,3 @@ To run the Task Manager frontend on your local machine, follow these steps:
 npm install
 npm start
 ```
-
-## Screenshots
-
-<!-- Add some screenshots of the app here to showcase its appearance -->
