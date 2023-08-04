@@ -10,6 +10,7 @@ node_modules
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+/*/node_modules
 
 # testing
 coverage
@@ -53,3 +54,4 @@ cdk.out
 ./cdk.context.json
 .yalc
 yalc.lock
+
