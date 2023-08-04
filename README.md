@@ -53,16 +53,17 @@ Please note that the current implementation of the Task Manager project is focus
 
 Happy task managing!
 
-![Sign In](./public/Screenshot 2023-08-04 at 14.51.23.png)
+![Sign In](https://github.com/jadzeino/TaskManager-CC/raw/main/public/Screenshot 2023-08-04-at-14.51.23.png)
 
-![Create User In](./public/Screenshot 2023-08-04 at 14.51.36.png)
+![Create User In](https://github.com/jadzeino/TaskManager-CC/raw/main/public/Screenshot 2023-08-04-at-14.51.36.png)
 
-![Dashboard](./public/Screenshot 2023-08-04 at 14.58.27.png)
+![Dashboard](https://github.com/jadzeino/TaskManager-CC/raw/main/public/Screenshot 2023-08-04-at-14.58.27.png)
 
-![Edit Task](./public/Screenshot 2023-08-04 at 14.59.36.png)
+![Edit Task](https://github.com/jadzeino/TaskManager-CC/raw/main/public/Screenshot 2023-08-04-at-14.59.36.png)
 
-![Assign Task](./public/Screenshot 2023-08-04 at 15.02.55.png)
+![Assign Task](https://github.com/jadzeino/TaskManager-CC/raw/main/public/Screenshot 2023-08-04-at-15.02.55.png)
 
-![Task History](./public/Screenshot 2023-08-04 at 15.03.26.png)
+![Task History](https://github.com/jadzeino/TaskManager-CC/raw/main/public/Screenshot 2023-08-04-at-15.03.26.png)
 
-![Task Status](./public/Screenshot 2023-08-04 at 15.04.23.png)
+![Task Status](https://github.com/jadzeino/TaskManager-CC/raw/main/public/Screenshot 2023-08-04-at-15.04.23.png)
+
