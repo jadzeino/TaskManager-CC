@@ -18,7 +18,7 @@ let createdTaskId:any;
 let newUserId:any;
 let user1Name = 'Ahmed Zeno'
 
-describe.only('Integration tests', () => {
+describe('Integration tests', () => {
   beforeAll(async () => {
     //clear the test database
     await clearTestDatabase()
