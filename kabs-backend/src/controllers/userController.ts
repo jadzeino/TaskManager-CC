@@ -106,7 +106,7 @@ export async function createUser(req: Request, res: Response) {
           hashedPassword,
         ]);
         const createdUser = result[0]
-        console.log('createdUser  ', createdUser);
+        //console.log('createdUser  ', createdUser);
         const userId = createdUser.insertId;
     
         return res.status(201).json({ message: 'User created successfully', userId, name });
