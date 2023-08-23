@@ -100,7 +100,7 @@ export async function updateTaskStatus(req: Request, res: Response) {
         "SELECT * FROM tasks WHERE id = ?",
         [taskId]
       );
-      console.log("taskRows  ", taskRows);
+      //console.log("taskRows  ", taskRows);
       const task = taskRows[0];
 
       if (!task) {
@@ -174,7 +174,7 @@ export async function updateTaskTitleAndDescription(
         "SELECT * FROM tasks WHERE id = ?",
         [taskId]
       );
-      console.log("result  ", taskRows);
+      //console.log("result  ", taskRows);
       const task = taskRows[0];
 
       if (!task) {
