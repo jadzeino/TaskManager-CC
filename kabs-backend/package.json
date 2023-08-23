@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env STAGE=test jest",
+    "test": "jest",
+    "test:integration": "jest --testMatch=\"**/*.integration.test.ts\"",
     "test:coverage": "jest --coverage",
-    "build:db" : "docker-compose up",
+    "build:db": "docker-compose up",
     "start": "nodemon src/index.ts"
   },
   "keywords": [],

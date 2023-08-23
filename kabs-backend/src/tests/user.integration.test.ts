@@ -3,8 +3,6 @@ import express from "express";
 import routers from "../routes/routers";
 import cors from "cors";
 import { clearTestDatabase, closeDatabasePool, pool } from "../db/database";
-import bcrypt from "bcrypt";
-import { createUser } from "../controllers/userController";
 
 const app = express();
 app.use(express.json());
@@ -13,7 +11,7 @@ app.use(routers);
 
 const request = supertest(app);
 
-let createdUserId: any;
+let createdUserId: number;
 let createdUserEmail: string;
 beforeAll(async () => {
   //clear the test database

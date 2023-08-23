@@ -83,7 +83,8 @@ The following APIs are available in the KABS-BACKEND:
 
 ## Note
 
-The KABS-BACKEND repository provides the basic functionalities for the Task Manager application. To simplify development and avoid spending excessive time on certain tasks, some features like middlewares for assertions, adding Models, authorisation,UDID and pagination mechanisms have not been implemented. Additionally, database optimizations have not been explored.
+- The KABS-BACKEND repository provides the basic functionalities for the Task Manager application. To simplify development and avoid spending excessive time on certain tasks, some features like middlewares for assertions, adding Models, authorisation,UDID and pagination mechanisms have not been implemented. Additionally, database optimizations have not been explored.
+- i kept the .env in the gitub just for the sake of demonstrating i also set the stage to test for now.
 
 ## Getting Started
 
@@ -92,6 +93,8 @@ To start the KABS-BACKEND repository, follow these steps:
 1. Run `npm install` to install the required dependencies.
 2. Run `npm run build:db` to create and seed the database with dummy data.
 3. Run `npm start` to start the server and run the backend application.
+4. To run integrartion test make sure to that the docker container is runing and then you can run `npm run test:integration`
+5. To run unit tests Run `npm run test:unit`
 
 ## Postman Collection
 
