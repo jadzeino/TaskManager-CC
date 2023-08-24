@@ -10,13 +10,11 @@ import { callUpdateTaskStatus } from '../apis/updateTaskStatusApi';
 type TaskColumnProps = {
     status: string;
     tasks: Task[];
-    updateTasks: (updatedTask: Task)=>void;
     updateTaskStatus: (taskId: number, newStatus: string) => void;
-    handleAssignTask: (taskId: number, selecteduser: string) => void;
     updatedBy: number
   };
 
-  const TaskColumn: React.FC<TaskColumnProps> = ({ status, tasks, updateTaskStatus,updateTasks,handleAssignTask,updatedBy }) => {
+  const TaskColumn: React.FC<TaskColumnProps> = ({ status, tasks, updateTaskStatus,updatedBy }) => {
 // Create a drop target to handle the drop event
 const [, drop] = useDrop({
     accept: ItemTypes.TASK,
@@ -52,7 +50,7 @@ const [, drop] = useDrop({
             overflow: 'auto',
           }} */> 
           {tasks.map((task) => (
-            <DraggableTaskCard key={task.id} task={task} updateTasks={updateTasks} handleAssignTask={handleAssignTask}/>
+            <DraggableTaskCard key={task.id} task={task}/>
           ))}
           </Paper>
         </Box>
