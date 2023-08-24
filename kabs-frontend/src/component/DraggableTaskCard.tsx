@@ -6,11 +6,9 @@ import { ItemTypes } from '../constants';
 
 type DraggableTaskCardProps = {
   task: Task;
-  updateTasks:(updatedTask:Task)=>void
-  handleAssignTask:(taskId:number,selectedUser:string)=>void
 };
 
-const DraggableTaskCard: React.FC<DraggableTaskCardProps> = ({ task,updateTasks,handleAssignTask }) => {
+const DraggableTaskCard: React.FC<DraggableTaskCardProps> = ({ task }) => {
   const [{ isDragging }, drag] = useDrag({
     type: ItemTypes.TASK,
     item: { task },
@@ -21,7 +19,7 @@ const DraggableTaskCard: React.FC<DraggableTaskCardProps> = ({ task,updateTasks,
 
   return (
     <div ref={drag} draggable style={{ opacity: isDragging ? 0.5 : 1 }}>
-      <TaskCard task={task} updateTasks={updateTasks} handleAssignTask={handleAssignTask} />
+      <TaskCard task={task} />
     </div>
   );
 };

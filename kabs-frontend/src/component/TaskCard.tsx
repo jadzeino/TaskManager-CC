@@ -1,58 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Card, CardContent, IconButton, Typography } from '@mui/material';
 import { Task } from '../types/TaskType';
 import EditIcon from '@mui/icons-material/Edit';
 import PersonIcon from '@mui/icons-material/Person';
 import HistoryIcon from '@mui/icons-material/History';
-import EditTaskForm from './EditTaskForm';
-import AssignTaskForm from './AssignTaskForm';
-import TaskHistory from './TaskHistory';
-import { useUserContext } from '../context/UserContext';
-import { updateTaskTitleAndDescription } from '../apis/updateTaskTitleAndDescriptionApi';
 
-const TaskCard = ({ task, updateTasks,handleAssignTask }: { task: Task,updateTasks:(updatedTask:Task)=>void, handleAssignTask:(taskId:number,selectedUser:string)=>void }) => {
+import { useTaskActionsContext } from '../context/TaskActionsContext';
 
-    const [isEditTaskOpen, setIsEditTaskOpen] = useState(false);
-    const [isAssignTaskOpen, setIsAssignTaskOpen] = useState(false);
-    const [isTaskHistoryOpen, setIsTaskHistoryOpen] = useState(false);
-    const { user } = useUserContext();
-
-    const handleOpenEditTask = () => {
-        setIsEditTaskOpen(true);
-    };
-  
-    const handleCloseEditTask = () => {
-        setIsEditTaskOpen(false);
-    };
-
-    const handleOpenAssignTask = () => {
-        setIsAssignTaskOpen(true);
-    };
-  
-    const handleCloseAssignTask = () => {
-        setIsAssignTaskOpen(false);
-    };
-
-    const handleOpenTaskHistory = () => {
-        setIsTaskHistoryOpen(true);
-    };
-
-    const handleCloseTaskHistory = () => {
-        setIsTaskHistoryOpen(false);
-    };
-
-    
-
-    const handleUpdateTaskTitleAndDescription = async (taskId: number, newTitle: string, newDescription: string) => {
-        try {
-           await updateTaskTitleAndDescription(taskId,newTitle,newDescription,user ? parseInt(user.id, 10) : 0) 
-          
-          updateTasks({ ...task, title: newTitle, description: newDescription });
-          handleCloseEditTask();
-        } catch (error) {
-          console.error('Error updating task title and description:', error);
-        }
-      };
+const TaskCard = ({ task }: { task: Task}) => {
+  const { dispatchEditForm, dispatchAssignForm, dispatchHistory } = useTaskActionsContext();
 
     const handleDragStart = (e: React.DragEvent) => {
         e.dataTransfer.setData('text/plain', JSON.stringify(task));
@@ -79,13 +35,13 @@ const TaskCard = ({ task, updateTasks,handleAssignTask }: { task: Task,updateTas
     >
       <CardContent>
         <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'nowrap', justifyContent: 'space-between', alignItems: 'center' }}>
-            <IconButton onClick={handleOpenTaskHistory}>
+            <IconButton onClick={() => dispatchHistory(task)}>
                 <HistoryIcon />
             </IconButton>
-            <IconButton onClick={handleOpenAssignTask}>
+            <IconButton onClick={() => dispatchAssignForm(task)}>
                 <PersonIcon />
             </IconButton>
-             <IconButton onClick={handleOpenEditTask}>
+             <IconButton onClick={() => dispatchEditForm(task)}>
                 <EditIcon />
             </IconButton>
         </Box>
@@ -103,19 +59,6 @@ const TaskCard = ({ task, updateTasks,handleAssignTask }: { task: Task,updateTas
         </Typography>
         
       </CardContent>
-
-      {/* Task actions pop-up */}
-      {isEditTaskOpen && <EditTaskForm open={isEditTaskOpen} onClose={handleCloseEditTask} 
-      onUpdateTaskTitleAndDescription={handleUpdateTaskTitleAndDescription}
-      task={task} />}
-      
-      {isAssignTaskOpen && <AssignTaskForm onClose={handleCloseAssignTask} 
-      handleAssignTask={handleAssignTask}
-      task={task}
-      updatedBy={user ? parseInt(user.id, 10) : 0} />}
-
-      {isTaskHistoryOpen && <TaskHistory onClose={handleCloseTaskHistory} 
-      task={task} />}
     </Card>
   );
 };

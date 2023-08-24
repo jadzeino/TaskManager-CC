@@ -11,6 +11,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import CreateTaskForm from '../component/CreateTaskForm';
 import { getTasks } from '../apis/getTasksApi';
 import { createTaskApi } from '../apis/createTaskApi';
+import TaskManager from '../component/TaskManager';
 
 function DashboardPage() {
   const { logout,user } = useUserContext();
@@ -120,7 +121,8 @@ function DashboardPage() {
           <DndProvider backend={HTML5Backend}>
             {STATUSES.map((status) => (
               <Grid item xs={12} sm={6} md={4} lg={2} key={status}>
-                <TaskColumn status={status} tasks={tasks.filter((task:Task) => task.status === status)} updateTaskStatus={updateTaskStatus} updateTasks={updateTasks} handleAssignTask={handleAssignTask} updatedBy={user ? parseInt(user.id, 10) : 0}/>
+                <TaskColumn status={status} tasks={tasks.filter((task:Task) => task.status === status)} updateTaskStatus={updateTaskStatus}
+                  updatedBy={user ? parseInt(user.id, 10) : 0}/>
               </Grid>
             ))}
           </DndProvider>
@@ -128,6 +130,7 @@ function DashboardPage() {
         </Box>
       </Container>
 
+      <TaskManager updateTasks={updateTasks} handleAssignTask={handleAssignTask} />
       {isCreateTaskFormOpen && (
         <CreateTaskForm
           open={isCreateTaskFormOpen}
